@@ -14,7 +14,7 @@ public class Sphere extends Shape {
 	private float radius = 0.0f;
 	
 	// Get the radius of the Sphere
-	private float getRadius() {
+	public float getRadius() {
 		return radius;
 	}
 

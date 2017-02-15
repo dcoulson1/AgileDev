@@ -21,7 +21,7 @@ public class Cuboid extends Shape{
 
 	
 	// Get the width of the cuboid
-	private float getWidth() {
+	public float getWidth() {
 		return width;
 	}
 
@@ -31,7 +31,7 @@ public class Cuboid extends Shape{
 	}
 
 	// Get the height of the Cuboid
-	private float getHeight() {
+	public float getHeight() {
 		return height;
 	}
 	
@@ -41,7 +41,7 @@ public class Cuboid extends Shape{
 	}
 	
 	// Get the depth of the cuboid
-	private float getDepth() {
+	public float getDepth() {
 		return depth;
 	}
 

@@ -17,7 +17,7 @@ public class Cylinder extends Shape{
 	private float height = 0.0f;
 
 	// Gets the radius of the Cylinder
-	private float getRadius() {
+	public float getRadius() {
 		return radius;
 	}
 
@@ -27,7 +27,7 @@ public class Cylinder extends Shape{
 	}
 
 	// Gets the height of the Cylinder
-	private float getHeight() {
+	public float getHeight() {
 		return height;
 	}
 
