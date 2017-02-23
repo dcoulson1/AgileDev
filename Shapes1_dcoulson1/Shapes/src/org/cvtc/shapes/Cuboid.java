@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 
 // Represents 3D Cuboid shape
-public class Cuboid extends Shape{
+public class Cuboid extends Shape implements Renderer{
 
 	// The width of the cuboid instance
 	private float width = 0.0f;
@@ -49,10 +49,13 @@ public class Cuboid extends Shape{
 	private void setDepth(float depth) {
 		this.depth = depth;
 	}
-	
+
 	// Initialize a new instance of the cuboid
-	public Cuboid(float width, float height, float depth){
+	
+	public Cuboid(Dialog dialog, float width, float height, float depth){
 		// ensure the dimensions of the cuboid are not negative
+		super(dialog);
+		
 		if(width > 0 && height > 0 && depth > 0){
 			setWidth(width);
 			setHeight(height);
@@ -103,7 +106,7 @@ public class Cuboid extends Shape{
 		
 	
 
-	
+		
 	@Override
 	public float getSurfaceArea() {
 		// Use the dimensions to execute the calculations for surface area
@@ -116,15 +119,17 @@ public class Cuboid extends Shape{
 		return getWidth() * getHeight() * getDepth();
 	}
 
-	// Display the message box with the measurements of the shape
 	@Override
 	public void render() {
-		//Build a string for the dialog box and display the box		
-		JOptionPane.showMessageDialog(null, "The Cuboid has a surface area of: " + getSurfaceArea() + ""
-				+ "\n The Cuboid's volume is: " + getVolume());
-
+		// Build string for dialog box
+		getDialog().show("The Cuboid has a surface area of: " + getSurfaceArea() + ""
+				+ "\n The Cuboid's volume is: " + getVolume(), "Cuboid");
 		
 	}
+
+
+    
+
 	
 	
 	

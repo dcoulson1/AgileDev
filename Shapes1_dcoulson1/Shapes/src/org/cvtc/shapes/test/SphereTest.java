@@ -5,6 +5,7 @@ package org.cvtc.shapes.test;
 
 import static org.junit.Assert.*;
 
+import org.cvtc.shapes.Dialog;
 import org.cvtc.shapes.Sphere;
 import org.junit.Test;
 
@@ -13,13 +14,14 @@ import org.junit.Test;
  *
  */
 public class SphereTest {
+	Dialog dialog = new MessageBoxSubstitute();
 
 	/**
 	 * Test method for {@link org.cvtc.shapes.Sphere#getSurfaceArea()}.
 	 */
 	@Test
 	public void testGetSurfaceArea() {
-		Sphere sphere = new Sphere(5);
+		Sphere sphere = new Sphere(dialog, 5);
 		
 		float expected = (float) Math.PI * 4 * 25;
 		
@@ -34,7 +36,7 @@ public class SphereTest {
 	 */
 	@Test
 	public void testGetVolume() {
-		Sphere sphere = new Sphere(10);
+		Sphere sphere = new Sphere(dialog, 10);
 		
 		float expected = (float) Math.PI * (float)Math.pow(10, 3) * (4 / 3); 
 		
@@ -46,7 +48,7 @@ public class SphereTest {
 	
 	@Test
 	public void testRadius(){
-		Sphere sphere = new Sphere(12);
+		Sphere sphere = new Sphere(dialog, 12);
 		
 		float expected = 12f;
 		

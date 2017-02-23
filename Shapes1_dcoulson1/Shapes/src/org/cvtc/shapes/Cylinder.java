@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 
 // Represents 3D Cylinder shape
-public class Cylinder extends Shape{
+public class Cylinder extends Shape implements Renderer{
 
 	// Holds radius of Cylinder
 	private float radius = 0.0f;
@@ -36,8 +36,9 @@ public class Cylinder extends Shape{
 		this.height = height;
 	}
 	
-	public Cylinder(float radius, float height){
+	public Cylinder(Dialog dialog, float radius, float height){
 		// ensure the dimensions of the Cylinder are not negative
+		super(dialog);
 		if(radius > 0 && height > 0){
 			setRadius(radius);
 			setHeight(height);
@@ -89,8 +90,8 @@ public class Cylinder extends Shape{
 	@Override
 	public void render(){
 		//Build a string for the dialog box and display the box		
-		JOptionPane.showMessageDialog(null, "The Cylinder has a surface area of: " + getSurfaceArea() + ""
-				+ "\n The Cylinder's volume is: " + getVolume());
+		getDialog().show("The Cylinder has a surface area of: " + getSurfaceArea() + ""
+				+ "\n The Cylinder's volume is: " + getVolume(), "Cylinder");
 
 	}
 	

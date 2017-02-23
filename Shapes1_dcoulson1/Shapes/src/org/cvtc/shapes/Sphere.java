@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 
 // Represent 3D Sphere shape
-public class Sphere extends Shape {
+public class Sphere extends Shape implements Renderer{
 	
 	// Holds the radius of the Sphere instance
 	private float radius = 0.0f;
@@ -23,7 +23,8 @@ public class Sphere extends Shape {
 		this.radius = radius;
 	}
 	
-	public Sphere(float radius){
+	public Sphere(Dialog dialog, float radius){
+		super(dialog);
 		// ensure the dimensions of the sphere are not negative
 		if(radius > 0){
 			setRadius(radius);
@@ -66,8 +67,8 @@ public class Sphere extends Shape {
 	@Override
 	public void render() {
 		//Build a string for the dialog box and display the box		
-		JOptionPane.showMessageDialog(null, "The Sphere has a surface area of: " + getSurfaceArea() + ""
-				+ "\n The Sphere's volume is: " + getVolume());
+		getDialog().show( "The Sphere has a surface area of: " + getSurfaceArea() + ""
+				+ "\n The Sphere's volume is: " + getVolume(), "Sphere");
 		
 
 	}

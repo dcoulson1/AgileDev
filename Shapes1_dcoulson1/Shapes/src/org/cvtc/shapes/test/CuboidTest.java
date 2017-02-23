@@ -9,8 +9,10 @@ import static org.junit.Assert.*;
 import java.io.Console;
 
 import org.cvtc.shapes.Cuboid;
+import org.cvtc.shapes.Dialog;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 
 import junitparams.*;
 /**
@@ -19,6 +21,7 @@ import junitparams.*;
  */
 @RunWith(JUnitParamsRunner.class)
 public class CuboidTest {
+	Dialog dialog = new MessageBoxSubstitute();
 
 	/**
 	 * Test method for {@link org.cvtc.shapes.Cuboid#getSurfaceArea()}.
@@ -28,7 +31,7 @@ public class CuboidTest {
 	@Test
 
 	public void testGetSurfaceArea() {
-		Cuboid cuboid = new Cuboid(5, 8, 5);
+		Cuboid cuboid = new Cuboid(dialog, 5, 8, 5);
 		
 		float expected = 210f;
 		
@@ -42,11 +45,11 @@ public class CuboidTest {
 	 * Test method for {@link org.cvtc.shapes.Cuboid#getVolume()}.
 	 */
 	@Test
-	@junitparams.Parameters({"6, 10, 5"})
-	public void testGetVolume(float x, float y, float z) {
+	
+	public void testGetVolume() {
 		//1. arrange
-		Cuboid cuboid = new Cuboid(x, y, z);
-		float expected = x * y * z;
+		Cuboid cuboid = new Cuboid(dialog, 4, 2, 6);
+		float expected = 48.0f;
 		//2. act
 		float actual = cuboid.getVolume();
 		
@@ -56,7 +59,7 @@ public class CuboidTest {
 	
 	@Test
 	public void testGetWidth(){
-		Cuboid cuboid = new Cuboid(4, 8, 4);
+		Cuboid cuboid = new Cuboid(dialog, 4, 8, 4);
 		
 		float expected = 4.0f;
 		
@@ -68,7 +71,7 @@ public class CuboidTest {
 	
 	@Test
 	public void testGetHeight(){
-		Cuboid cuboid = new Cuboid(8, 12, 6);
+		Cuboid cuboid = new Cuboid(dialog, 8, 12, 6);
 		
 		float expected = 12f;
 		
@@ -80,7 +83,7 @@ public class CuboidTest {
 	
 	@Test
 	public void testGetDepth(){
-		Cuboid cuboid = new Cuboid(8, 12, 6);
+		Cuboid cuboid = new Cuboid(dialog, 8, 12, 6);
 		
 		float expected = 6f;
 		

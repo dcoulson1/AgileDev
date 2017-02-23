@@ -8,6 +8,17 @@ package org.cvtc.shapes;
 // Base Shape superclass
 public abstract class Shape {
 
+	private Dialog dialog;
+	
+	protected Dialog getDialog(){
+		return dialog;
+	}
+	
+	private void setDialog(Dialog dialog){
+		this.dialog = dialog;
+	}
+	
+	
 	/*
 	 * method for determining surfaceArea of a shape
 	 */
@@ -19,10 +30,12 @@ public abstract class Shape {
 	 */
 	public abstract float getVolume();
 	
-	/*
-	 * method to display the measurements of a shape
-	 */
-	public abstract void render();
+
+	
+	// Constructor 
+	public Shape(Dialog dialog){
+		setDialog(dialog);
+	}
 
 
 }
