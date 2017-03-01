@@ -12,14 +12,10 @@ import org.cvtc.shapes.Cuboid;
 import org.cvtc.shapes.Dialog;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-
-import junitparams.*;
 /**
  * @author dfc09
  *
  */
-@RunWith(JUnitParamsRunner.class)
 public class CuboidTest {
 	Dialog dialog = new MessageBoxSubstitute();
 
